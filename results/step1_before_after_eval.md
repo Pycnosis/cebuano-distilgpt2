@@ -73,3 +73,33 @@ I am going to be writing about the issue of the state-owned water project, and I
 - **Step 1 Greedy (After LoRA):** gipahigayon sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapul
 - **Step 0 Sampled (Before):** kabayon nga kabayon mga bata sa eskwelahan malipayon nga kabayon mga kabayon mga kabayon mga kabayon mga kabayon mga kabayon m
 - **Step 1 Sampled (After LoRA):** kabii ug nagpasabot ug nakita-bata sa kabii. Matod ni Enero, nahimutang ang mga buhatan sa eskwelahan alang sa lugar. Ang dakbayan nga k
+
+## Native-Speaker Linguistic Review (Lej)
+
+### 1. Per-Prompt Cebuano Evaluation (`P1`–`P5`)
+
+- **`P1_conversational` (`"Kumusta ka? Manghinaut ko nga"`):**
+  - **Grammatical & Lexical Gains:** Step 0 collapsed into `nga nga nga...` (greedy) and syllable noise (`ji ko ka?`, `kapunna lang`, sampled). After LoRA, the model outputs real Cebuano words and grammatical markers (`ang`, `mga`, `si`, `iyang`, `niya`, and verb prefixes `Naka-`, `Nag-`, `Nahu-`).
+  - **Remaining Issues:** Greedy gets trapped repeating `nagkalit/Nagkalibutan ang mga kalibutan?`, while sampled switches into third-person narrative (`si Della`) with some unnatural verb-argument agreement (`Nagkaon niya si Della`) and non-standard forms (`Nakahubag`, `Nakahuna`). Instead of answering `"Kumusta ka?"`, it continues as prose.
+
+- **`P2_news_gov` (`"Gipahibalo sa lokal nga kagamhanan sa Sugbo nga"`):**
+  - **Grammatical & Lexical Gains:** Step 0 merely echoed the prompt tail (`kagamhanan sa Sugbo nga...`). Step 1 produces authentic Cebuano news-register collocations and passive/locative verb forms (`gipahibalo`, `gipahimutang`), plural/case markers (`sa mga`, `nga`, `ilang`), and domain nouns (`kapulisan`, `hulagway`).
+  - **Remaining Issues:** Greedy locks into `sa kapulisan sa kapulisan...`; sampled stays topically grounded in local news but still invents occasional subword blends (`pagsalit`, `nagpangutog`).
+
+- **`P3_news_police` (`"Matud pa sa kapulisan sa dakbayan,"`):**
+  - **Grammatical & Lexical Gains:** Overcomes Step 0's prompt-copying loop by introducing valid relative clauses (`nga nagpuyo sa mga...`), discourse particles (`na sab`, `niini`), conjunctions (`ug`), and police-report vocabulary (`sa kaso`, `ang kapulisan`).
+  - **Remaining Issues:** Greedy loops on `sa kapulisan`; sampled captures newsroom cadence well despite minor lexical/syntactic slips (`kompuyente`, `Gipatak`, `nga sa ilabi`).
+
+- **`P4_literary` (`"Sa usa ka gamay nga baryo duol sa dagat, adunay"`):**
+  - **Grammatical & Lexical Gains:** Completely eliminates Step 0's severe English code-switching (`"I am going to be writing about the issue of the state-owned water project..."`). Following the existential `adunay`, sampled supplies a contextually fitting coastal noun phrase (`gamay nga sakyanan`) paired with `sa dagat`, `paggamit`, and the adversative linker `apan`. Greedy introduces valid news-style attribution (`Sumala pa sa...`, `gipahigayon niini ang...`).
+  - **Remaining Issues:** Greedy over-repeats `mga kalibutan`, and sampled recycles the clause frame `apan nakita ka...` with awkward `ka` pronoun placement.
+
+- **`P5_pedagogical` (`"Ang mga bata sa eskwelahan malipayon nga"`):**
+  - **Grammatical & Lexical Gains:** Replaces Step 0's gibberish loops (`kapat`, `kabayon`) with coherent Cebuano function words (`ug`, `alang sa`, `Matod ni`) and school/community vocabulary (`mga buhatan sa eskwelahan`, `lugar`, `dakbayan`). Notably, `"Matod ni Enero, nahimutang ang mga buhatan sa eskwelahan alang sa lugar"` is a grammatically well-formed Cebuano sentence.
+  - **Remaining Issues:** Greedy abruptly shifts domain to `gipahigayon sa kapulisan`, reflecting the corpus imbalance (**4,258** CebuaNER news blocks vs. **350** Cebuano Readability passages), while sampled retains minor subword artifacts (`kabii`, `nakita-bata`).
+
+### 2. Cross-Prompt Diagnostic Takeaways
+
+1. **Why Greedy Decoding Still Loops:** Under `do_sample=False`, `distilgpt2` deterministically picks the highest-probability next token at every step. Because news-corpus collocations like `sa kapulisan` and `sa mga kalibutan` have very high conditional probability, once entered they form self-reinforcing n-gram basins. This directly motivates **Step 2**, where `top-k`, `top-p`, and beam search with `no_repeat_ngram_size` are evaluated to break repetitive loops.
+2. **Text Continuation vs. Question-Answering:** The fine-tuning corpus contains raw news articles (`CebuaNER`) and short narratives/DepEd passages (`cebuano-readability`), with no conversational or instruction-tuning pairs. Consequently, the adapted model behaves as a **Cebuano text-continuation engine**—continuing prompts in news or story registers rather than answering questions directly.
+
