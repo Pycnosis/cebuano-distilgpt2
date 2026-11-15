@@ -1,0 +1,119 @@
+{
+  "device": "cuda",
+  "lora_config": {
+    "r": 32,
+    "lora_alpha": 64,
+    "lora_dropout": 0.05,
+    "target_modules": [
+      "c_attn",
+      "c_proj"
+    ],
+    "fan_in_fan_out": true
+  },
+  "parameters": {
+    "total_params": 83534592,
+    "trainable_params": 1622016,
+    "frozen_params": 81912576,
+    "trainable_percent": 1.9417
+  },
+  "dataset_blocks": {
+    "train_blocks": 1891,
+    "val_blocks": 217,
+    "block_size": 256
+  },
+  "training_metrics": {
+    "initial_train_loss": 5.593798828125,
+    "final_train_loss": 3.5290817260742187,
+    "final_eval_loss": 3.4481751918792725,
+    "trainer_avg_train_loss": 3.895
+  },
+  "before_perplexity": {
+    "val_blocks": 219,
+    "block_size": 256,
+    "val_tokens_evaluated": 56064,
+    "val_loss": 5.3545,
+    "val_perplexity": 211.56
+  },
+  "after_perplexity": {
+    "val_blocks": 219,
+    "block_size": 256,
+    "val_tokens_evaluated": 56064,
+    "val_loss": 3.5518,
+    "val_perplexity": 34.88
+  },
+  "tokenizer_check": [
+    {
+      "word": "kagamhanan",
+      "step0_tokens": 5,
+      "step1_tokens": 5,
+      "subwords": "k | ag | am | han | an"
+    },
+    {
+      "word": "eskwelahan",
+      "step0_tokens": 4,
+      "step1_tokens": 4,
+      "subwords": "es | kw | el | ahan"
+    },
+    {
+      "word": "kapulisan",
+      "step0_tokens": 4,
+      "step1_tokens": 4,
+      "subwords": "k | ap | ul | isan"
+    },
+    {
+      "word": "tinun-an",
+      "step0_tokens": 4,
+      "step1_tokens": 4,
+      "subwords": "tin | un | - | an"
+    },
+    {
+      "word": "malipayon",
+      "step0_tokens": 4,
+      "step1_tokens": 4,
+      "subwords": "mal | ip | ay | on"
+    },
+    {
+      "word": "panaghiusa",
+      "step0_tokens": 4,
+      "step1_tokens": 4,
+      "subwords": "pan | agh | ius | a"
+    }
+  ],
+  "generations": [
+    {
+      "id": "P1_conversational",
+      "register": "Conversational",
+      "prompt": "Kumusta ka? Manghinaut ko nga",
+      "greedy_continuation": "nagkalit ang mga kalibutan?\nNagkalibutan ang mga kalibutan?\nNagkalibutan ang mga kalibutan?\nNagkalibutan ang mga kalibutan?\nN",
+      "sampled_continuation": "si Della.\nNakahubag na si Della ang iyang nakahayag si Della.\nNahunahuna niya si Della.\nNagkaon niya si Della.\nNakahuna niya si Della."
+    },
+    {
+      "id": "P2_news_gov",
+      "register": "News (Local Government)",
+      "prompt": "Gipahibalo sa lokal nga kagamhanan sa Sugbo nga",
+      "greedy_continuation": "gipahibalo sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan",
+      "sampled_continuation": "gipahimutang sa mga pagsalit sa mga hulagway nga nagpangutog sa ilang kapulisan sa kapulisan sa mga gipahibalo nga gipahimutang sa mga p"
+    },
+    {
+      "id": "P3_news_police",
+      "register": "News (Police Report)",
+      "prompt": "Matud pa sa kapulisan sa dakbayan,",
+      "greedy_continuation": "nga nagpuyo sa mga kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa",
+      "sampled_continuation": "nasud nga ilabi sa kapulisan nga sa ilabi. Gipag-abot na sab niini ang mga kompuyente ug buntag sa kaso. Gipatak na sa kapulisan ang kapulisan sa"
+    },
+    {
+      "id": "P4_literary",
+      "register": "Literary / Narrative",
+      "prompt": "Sa usa ka gamay nga baryo duol sa dagat, adunay",
+      "greedy_continuation": "mga kalibutan sa mga kalibutan sa mga kalibutan. Sumala pa sa mga kalibutan, gipahigayon niini ang mga kalibutan sa mga kalibutan sa mga kalib",
+      "sampled_continuation": "gamay nga sakyanan, apan nakita ka dili nag-ampay sa dagat, apan nakita ka mga buhaton, apan nakita ka paggamit, apan nga sakyanan, apan"
+    },
+    {
+      "id": "P5_pedagogical",
+      "register": "Pedagogical / School",
+      "prompt": "Ang mga bata sa eskwelahan malipayon nga",
+      "greedy_continuation": "gipahigayon sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapul",
+      "sampled_continuation": "kabii ug nagpasabot ug nakita-bata sa kabii. Matod ni Enero, nahimutang ang mga buhatan sa eskwelahan alang sa lugar. Ang dakbayan nga k"
+    }
+  ]
+}
