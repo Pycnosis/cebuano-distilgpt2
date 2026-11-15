@@ -49,6 +49,18 @@ pip install -r requirements.txt
    python scripts/step1_train_lora.py
    ```
 
+## Week 1 Results Summary (Step 0 & Step 1)
+
+| Metric | Value | Notes |
+| :--- | :--- | :--- |
+| **Combined Corpus** | `4,608` docs / `236,487` words / `535,319` BPE tokens | `4,258` CebuaNER blocks + `350` readability passages |
+| **Train / Val Split (90/10)** | `480,130` / `55,189` BPE tokens | Stratified across registers (`seed=42`) |
+| **Word Fertility (12 Pairs)** | English `2.08` vs. Cebuano `4.25` tokens/word | Unchanged by LoRA (frozen BPE table) |
+| **Sentence Fertility (5 Pairs)** | English `1.16` vs. Cebuano `2.54` tokens/word | `2.37` vs. `5.12` chars/token |
+| **LoRA Trainable Budget** | `1,622,016 / 83,534,592` (`1.94%`) | `r=32`, `alpha=64`, `c_attn` + `c_proj`, 6 epochs |
+| **Step 0 Baseline Perplexity** | `211.56` (Val Loss `5.3545`) | Stock `distilgpt2` on `cebuano_corpus_val.txt` |
+| **Step 1 Post-LoRA Perplexity** | **`34.88`** (Val Loss `3.5518`) | **-176.68 PPL (-83.5%)** |
+
 ## Corpus Sources & Licenses
 
 - **CebuaNER** (`josephimperial/CebuaNER`): 4,258 Cebuano news articles (Yes the Best Dumaguete, Filipinas Bisaya, Sunstar Cebu) originally IOB-tagged for NER. Plain sentences reconstructed by discarding NER tags. License: **CC BY-NC 4.0** (academic/non-commercial use).
