@@ -1,0 +1,82 @@
+{
+  "model": "distilgpt2",
+  "device": "cuda",
+  "tokenizer_summary": {
+    "words": {
+      "Cebuano": {
+        "total_words": 12,
+        "total_tokens": 51,
+        "total_chars": 112,
+        "avg_tokens_per_word": 4.25,
+        "avg_chars_per_token": 2.196
+      },
+      "English": {
+        "total_words": 12,
+        "total_tokens": 25,
+        "total_chars": 112,
+        "avg_tokens_per_word": 2.083,
+        "avg_chars_per_token": 4.48
+      }
+    },
+    "sentences": {
+      "Cebuano": {
+        "total_words": 57,
+        "total_tokens": 145,
+        "total_chars": 344,
+        "avg_tokens_per_word": 2.544,
+        "avg_chars_per_token": 2.372
+      },
+      "English": {
+        "total_words": 56,
+        "total_tokens": 65,
+        "total_chars": 333,
+        "avg_tokens_per_word": 1.161,
+        "avg_chars_per_token": 5.123
+      }
+    }
+  },
+  "validation_perplexity": {
+    "val_blocks": 219,
+    "block_size": 256,
+    "val_tokens_evaluated": 56064,
+    "val_loss": 5.3545,
+    "val_perplexity": 211.56
+  },
+  "generations": [
+    {
+      "id": "P1_conversational",
+      "register": "Conversational",
+      "prompt": "Kumusta ka? Manghinaut ko nga",
+      "greedy_continuation": "nga nga nga nga nga nga nga nga nga nga nga nga nga nga nga nga nga nga nga nga nga nga nga nga nga nga nga nga nga nga",
+      "sampled_continuation": "ji ko ka?\n\n\nManga na nga, na nga ko, na kapunna lang na kapunna lang na nga, na kapunna lang na kapunna lang nga, na kapunna lang nga, na"
+    },
+    {
+      "id": "P2_news_gov",
+      "register": "News (Local Government)",
+      "prompt": "Gipahibalo sa lokal nga kagamhanan sa Sugbo nga",
+      "greedy_continuation": "kagamhanan sa Sugbo nga kagamhanan sa Sugbo nga kagamhanan sa Sugbo nga kagamhanan sa Sugbo nga kagamhanan sa Sugbo nga kagamhanan sa Sugbo nga",
+      "sampled_continuation": "kagamhanan sa Sugbo nga kagamhanan sa Sugbo nga kagamhanan sa Sugbo nga kagamhanan sa Sugbo nga kagamhanan sa Sugbo nga kagamhanan sa Sugbo nga"
+    },
+    {
+      "id": "P3_news_police",
+      "register": "News (Police Report)",
+      "prompt": "Matud pa sa kapulisan sa dakbayan,",
+      "greedy_continuation": "sa kapulisan sa dakbayan, sa kapulisan sa dakbayan, sa kapulisan sa dakbayan, sa kapulisan sa dakbayan, sa kapulisan sa dakbayan, sa kapulisan",
+      "sampled_continuation": "pa sa kapulisan sa dakbayan, pa sa kapulisan sa dakbayan, pa sa kapulisan sa dakbayan, pa sa kapulisan sa dakbayan, pa sa kapulisan sa dakbayan,"
+    },
+    {
+      "id": "P4_literary",
+      "register": "Literary / Narrative",
+      "prompt": "Sa usa ka gamay nga baryo duol sa dagat, adunay",
+      "greedy_continuation": "na kapat na kapat na kapat na kapat na kapat na kapat na kapat na kapat na kapat na kapat na kapat na kapat na kapat na kapat na kapat",
+      "sampled_continuation": "sa ao na sabay, katay ditakay ka dar, nakay ka sabay.\n\nI am going to be writing about the issue of the state-owned water project, and I am not going to be giving a talk on that. It will be"
+    },
+    {
+      "id": "P5_pedagogical",
+      "register": "Pedagogical / School",
+      "prompt": "Ang mga bata sa eskwelahan malipayon nga",
+      "greedy_continuation": "bata sa kapat kapat kapat kapat kapat kapat kapat kapat kapat kapat kapat kapat kapat kapat kapat kapat kapat kapat kapat",
+      "sampled_continuation": "kabayon nga kabayon mga bata sa eskwelahan malipayon nga kabayon mga kabayon mga kabayon mga kabayon mga kabayon mga kabayon m"
+    }
+  ]
+}

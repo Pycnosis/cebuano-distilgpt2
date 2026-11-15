@@ -1,0 +1,35 @@
+category,pair_id,language,text,char_count,word_count,bpe_token_count,tokens_per_word,chars_per_token,subwords
+word,1,Cebuano,kagamhanan,10,1,5,5.0,2.0,k | ag | am | han | an
+word,1,English,government,10,1,1,1.0,10.0,government
+word,2,Cebuano,eskwelahan,10,1,4,4.0,2.5,es | kw | el | ahan
+word,2,English,university,10,1,2,2.0,5.0,un | iversity
+word,3,Cebuano,kapulisan,9,1,4,4.0,2.25,k | ap | ul | isan
+word,3,English,policemen,9,1,3,3.0,3.0,p | olic | emen
+word,4,Cebuano,tinun-an,8,1,4,4.0,2.0,tin | un | - | an
+word,4,English,students,8,1,2,2.0,4.0,stud | ents
+word,5,Cebuano,panghitabo,10,1,4,4.0,2.5,pan | gh | it | abo
+word,5,English,occurrence,10,1,2,2.0,5.0,occ | urrence
+word,6,Cebuano,malipayon,9,1,4,4.0,2.25,mal | ip | ay | on
+word,6,English,delighted,9,1,3,3.0,3.0,del | ight | ed
+word,7,Cebuano,kaugmaon,8,1,4,4.0,2.0,k | aug | ma | on
+word,7,English,tomorrow,8,1,2,2.0,4.0,tom | orrow
+word,8,Cebuano,kasaysayan,10,1,3,3.0,3.333,kas | ays | ayan
+word,8,English,literature,10,1,2,2.0,5.0,liter | ature
+word,9,Cebuano,pagtulun-an,11,1,7,7.0,1.571,p | ag | t | ul | un | - | an
+word,9,English,instruction,11,1,2,2.0,5.5,inst | ruction
+word,10,Cebuano,kinabuhi,8,1,4,4.0,2.0,kin | ab | u | hi
+word,10,English,lifetime,8,1,2,2.0,4.0,lif | etime
+word,11,Cebuano,kalibutan,9,1,4,4.0,2.25,k | al | ib | utan
+word,11,English,continent,9,1,2,2.0,4.5,cont | inent
+word,12,Cebuano,panaghiusa,10,1,4,4.0,2.5,pan | agh | ius | a
+word,12,English,fellowship,10,1,2,2.0,5.0,fell | owship
+sentence,1,Cebuano,Gipahibalo sa lokal nga kagamhanan sa Sugbo nga adunay bag-ong proyekto.,72,11,32,2.909,2.25,G | ip | ah | ib | alo | _sa | _l | ok | al | _n | ga | _k | ag | am | han | an | _sa | _Sug | bo | _n | ga | _ad | un | ay | _bag | - | ong | _pro | y | ek | to | .
+sentence,1,English,The local government of Cebu announced that there is a new project.,67,12,15,1.25,4.467,The | _local | _government | _of | _C | eb | u | _announced | _that | _there | _is | _a | _new | _project | .
+sentence,2,Cebuano,Ang mga bata sa eskwelahan malipayon nga nagbasa og mga libro.,62,11,27,2.455,2.296,Ang | _m | ga | _b | ata | _sa | _es | kw | el | ahan | _mal | ip | ay | on | _n | ga | _n | ag | bas | a | _o | g | _m | ga | _lib | ro | .
+sentence,2,English,The children in school are happily reading several books together.,66,10,11,1.1,6.0,The | _children | _in | _school | _are | _happily | _reading | _several | _books | _together | .
+sentence,3,Cebuano,"Sumala pa sa imbestigasyon sa kapulisan, nahitabo ang aksidente sa gabii.",73,11,29,2.636,2.517,"Sum | ala | _pa | _sa | _im | best | ig | asy | on | _sa | _k | ap | ul | isan | , | _n | ah | it | abo | _ang | _a | ks | ident | e | _sa | _g | ab | ii | ."
+sentence,3,English,"According to the police investigation, the accident happened at night.",70,10,12,1.2,5.833,"According | _to | _the | _police | _investigation | , | _the | _accident | _happened | _at | _night | ."
+sentence,4,Cebuano,"Sa usa ka gamay nga baryo duol sa dagat, nagpuyo ang usa ka pamilya.",68,14,30,2.143,2.267,"Sa | _us | a | _ka | _gam | ay | _n | ga | _b | ary | o | _du | ol | _sa | _dag | at | , | _n | ag | p | uy | o | _ang | _us | a | _ka | _p | amily | a | ."
+sentence,4,English,"In a small village near the sea, a family lived peacefully together.",68,12,14,1.167,4.857,"In | _a | _small | _village | _near | _the | _sea | , | _a | _family | _lived | _peacefully | _together | ."
+sentence,5,Cebuano,Kinahanglan nato ang panaghiusa ug kalinaw alang sa maayong kaugmaon.,69,10,27,2.7,2.556,Kin | ah | ang | lan | _n | ato | _ang | _pan | agh | ius | a | _u | g | _k | alin | aw | _al | ang | _sa | _ma | ay | ong | _k | aug | ma | on | .
+sentence,5,English,We really need unity and peace for a much better future ahead.,62,12,13,1.083,4.769,We | _really | _need | _unity | _and | _peace | _for | _a | _much | _better | _future | _ahead | .
