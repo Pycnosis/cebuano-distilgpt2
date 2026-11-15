@@ -23,9 +23,12 @@ Fine-tuning for 6 epochs (714 steps over 1,891 256-token blocks) completed in **
 ---
 
 ## References
-- Aghajanyan, A., Zettlemoyer, L., & Gupta, S. (2020). *Intrinsic Dimensionality Explains the Effectiveness of Language Model Fine-Tuning*. arXiv:2012.13255.
-- Hoffmann, J., et al. (2022). *Training Compute-Optimal Large Language Models* (Chinchilla). arXiv:2203.15556.
-- Hu, E. J., et al. (2021). *LoRA: Low-Rank Adaptation of Large Language Models*. arXiv:2106.09685.
-- Kaplan, J., et al. (2020). *Scaling Laws for Neural Language Models*. arXiv:2001.08361.
-- Pilar, M. B. E. N., et al. (2023). *CebuaNER: A New Baseline Cebuano Named Entity Recognition Model*. PACLIC 2023 (`josephimperial/CebuaNER`, CC BY-NC 4.0).
-- Imperial, J. M., et al. *Baseline Readability Assessment Model for Cebuano* (`filbench/cebuano-readability`, CC BY 4.0).
+
+- Aghajanyan, A., Zettlemoyer, L., & Gupta, S. (2020). *Intrinsic Dimensionality Explains the Effectiveness of Language Model Fine-Tuning*. arXiv preprint arXiv:2012.13255.
+- Hoffmann, J., Borgeaud, S., Mensch, A., Buchatskaya, E., Cai, T., Rutherford, E., de Las Casas, D., Hendricks, L. A., Welbl, J., Clark, A., Hennigan, T., Noland, E., Millican, K., van den Driessche, G., Damoc, B., Guy, A., Osindero, S., Simonyan, K., Elsen, E., Rae, J. W., Vinyals, O., & Sifre, L. (2022). *Training Compute-Optimal Large Language Models* (Chinchilla). arXiv preprint arXiv:2203.15556.
+- Hu, E. J., Shen, Y., Wallis, P., Allen-Zhu, Z., Li, Y., Wang, S., Wang, L., & Chen, W. (2022). *LoRA: Low-Rank Adaptation of Large Language Models*. International Conference on Learning Representations (ICLR 2022). arXiv:2106.09685.
+- Imperial, J. M., & Ong, E. (2020). *Baseline Readability Assessment Model for Cebuano*. Proceedings of the 1st Conference of the Asia-Pacific Chapter of the Association for Computational Linguistics (AACL-IJCNLP 2020). Dataset: `filbench/cebuano-readability` (Licensed under CC BY 4.0).
+- Kaplan, J., McCandlish, S., Henighan, T., Brown, T. B., Chess, B., Child, R., Gray, S., Radford, A., Wu, J., & Amodei, D. (2020). *Scaling Laws for Neural Language Models*. arXiv preprint arXiv:2001.08361.
+- Pilar, M. B. E. N., & Imperial, J. M. (2023). *CebuaNER: A New Baseline Cebuano Named Entity Recognition Model*. Proceedings of the 37th Pacific Asia Conference on Language, Information and Computation (PACLIC 37). Dataset: `josephimperial/CebuaNER` (Licensed under CC BY-NC 4.0).
+- Radford, A., Wu, J., Child, R., Luan, D., Amodei, D., & Sutskever, I. (2019). *Language Models are Unsupervised Multitask Learners* (GPT-2). OpenAI Technical Report.
+- Sanh, V., Debut, L., Chaumond, J., & Wolf, T. (2019). *DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter*. arXiv preprint arXiv:1910.01108.

@@ -2,6 +2,18 @@
 
 Midterm Project — Adapting pretrained `distilgpt2` (82M parameters) to Cebuano (Bisaya) using LoRA fine-tuning, decoding strategy benchmarking + KV-cache latency measurement, and lightweight DPO alignment.
 
+## Team Members
+
+- **Nico** ([@Pycnosis](https://github.com/Pycnosis)) — Modeling Pipeline & Decoding Benchmarks
+- **Lej** — Native-Speaker Linguistic Sanity Checks & DPO Preference Alignment
+- **Joshua** ([@JoshyEyeBa11](https://github.com/JoshyEyeBa11)) — Architecture Analysis, Technical Reporting & Presentation Lead
+
+## Project Deliverables & Links
+
+- **Repository:** [https://github.com/Pycnosis/cebuano-distilgpt2](https://github.com/Pycnosis/cebuano-distilgpt2)
+- **Canva Presentation Deck (5 Slides):** [Canva Presentation Link (Placeholder / View Deck)](https://www.canva.com/design/)
+- **Course Instructor Invitation:** `evm@usjr.edu.ph`
+
 ## Project Structure
 
 ```text
