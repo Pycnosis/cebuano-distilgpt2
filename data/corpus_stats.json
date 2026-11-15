@@ -1,0 +1,50 @@
+{
+  "sources": {
+    "cebuaner": {
+      "dataset": "josephimperial/CebuaNER",
+      "license": "CC BY-NC 4.0",
+      "register": "News articles",
+      "raw_conll_tokens": 184033,
+      "documents": 4258,
+      "lines_or_sentences": 4258,
+      "words": 169727,
+      "characters": 1038601,
+      "distilgpt2_bpe_tokens": 371628
+    },
+    "cebuano_readability": {
+      "dataset": "filbench/cebuano-readability",
+      "license": "CC BY 4.0",
+      "register": "Literary / pedagogical prose",
+      "documents": 350,
+      "lines_or_sentences": 4391,
+      "words": 66760,
+      "characters": 399473,
+      "distilgpt2_bpe_tokens": 163691
+    }
+  },
+  "combined": {
+    "documents": 4608,
+    "lines_or_sentences": 8649,
+    "words": 236487,
+    "characters": 1438076,
+    "distilgpt2_bpe_tokens": 535319
+  },
+  "splits": {
+    "seed": 42,
+    "val_ratio": 0.1,
+    "train": {
+      "documents": 4147,
+      "lines_or_sentences": 7832,
+      "words": 212096,
+      "characters": 1289457,
+      "distilgpt2_bpe_tokens": 480130
+    },
+    "validation": {
+      "documents": 461,
+      "lines_or_sentences": 817,
+      "words": 24391,
+      "characters": 148617,
+      "distilgpt2_bpe_tokens": 55189
+    }
+  }
+}
