@@ -6,7 +6,7 @@ Midterm Project — Adapting pretrained `distilgpt2` (82M parameters) to Cebuano
 
 - **Nico** ([@Pycnosis](https://github.com/Pycnosis)) — Modeling Pipeline & Decoding Benchmarks
 - **Lej** — Native-Speaker Linguistic Sanity Checks & DPO Preference Alignment
-- **Joshua** ([@JoshyEyeBa11](https://github.com/JoshyEyeBa11)) — Architecture Analysis, Technical Reporting & Presentation Lead
+- **Joshua** ([@JoshyEyeBa11](https://github.com/JoshyEyeBa11)) — Architecture Analysis, Technical Reporting
 
 ## Project Deliverables & Links
 
