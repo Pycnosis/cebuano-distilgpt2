@@ -44,7 +44,7 @@ is permutation-equivariant with respect to the input sequence, position informat
 
 GPT-2 and `distilgpt2` inherit the original architecture of Radford et al. (2019), implementing a learned positional embedding matrix $W_{\text{pos}} \in \mathbb{R}^{T_{\text{max}} \times d_{\text{model}}}$, where $T_{\text{max}} = 1024$ and $d_{\text{model}} = 768$. For an input token sequence $(x_0, x_1, \dots, x_{T-1})$, the input representation to the first transformer block is:
 
-$$h_i^{(0)} = W_{\text{token}}[x_i] + W_{\text{pos}}[i], \quad i \in \{0, 1, \dots, T-1\}$$
+$$h_i^{(0)} = W_{\text{token}}[x_i] + W_{\text{pos}}[i], \quad i \in \lbrace 0, 1, \dots, T-1 \rbrace$$
 
 #### Architectural Characteristics & Limitations:
 1. **Dedicated Parameter Budget:** The `wpe` matrix requires $1024 \times 768 = 786{,}432$ parameters. In `distilgpt2` (total parameters: $83{,}534{,}592$), `wpe` accounts for approximately **$0.94\%$** of the entire parameter budget.
@@ -88,9 +88,8 @@ ALiBi (employed in MPT-7B and BLOOM) takes an even more minimalist approach by c
 
 $$A_{i, j} = q_i k_j^\top - m \cdot (i - j), \quad \text{for } j \le i$$
 
-where $m$ is a head-specific geometric slope fixed during model definition:
-$$m \in \left\{ 2^{-8/H}, 2^{-16/H}, \dots, 2^{-8} \right\}$$
-for $H$ attention heads.
+where $m$ is a head-specific geometric slope fixed during model definition for $H$ attention heads:
+$$m \in \lbrace 2^{-8/H}, 2^{-16/H}, \dots, 2^{-8} \rbrace$$
 
 #### Architectural Advantages:
 1. **Zero Learned Parameters:** Exactly **0 parameters** required; slopes $m$ are static geometric constants.
