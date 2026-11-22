@@ -1,0 +1,719 @@
+{
+  "device": "cpu",
+  "dataset_summary": {
+    "total_pairs": 38,
+    "train_pairs": 32,
+    "test_pairs": 6
+  },
+  "test_pairs": {
+    "before_dpo": {
+      "count": 6,
+      "mean_margin": -27.5982,
+      "preference_accuracy": 0.0,
+      "pairs": [
+        {
+          "id": "dpo_13",
+          "register": "Conversational",
+          "failure_mode": "english_code_switching",
+          "split": "test",
+          "logp_chosen": -68.5389,
+          "logp_rejected": -64.713,
+          "margin": -3.8259,
+          "preferred_chosen": false
+        },
+        {
+          "id": "dpo_14",
+          "register": "Conversational",
+          "failure_mode": "repetition_loop",
+          "split": "test",
+          "logp_chosen": -103.1924,
+          "logp_rejected": -25.3294,
+          "margin": -77.863,
+          "preferred_chosen": false
+        },
+        {
+          "id": "dpo_25",
+          "register": "News (Local Government)",
+          "failure_mode": "repetition_loop",
+          "split": "test",
+          "logp_chosen": -89.0679,
+          "logp_rejected": -40.8506,
+          "margin": -48.2173,
+          "preferred_chosen": false
+        },
+        {
+          "id": "dpo_26",
+          "register": "News (Police Report)",
+          "failure_mode": "english_code_switching",
+          "split": "test",
+          "logp_chosen": -66.9201,
+          "logp_rejected": -63.4569,
+          "margin": -3.4631,
+          "preferred_chosen": false
+        },
+        {
+          "id": "dpo_37",
+          "register": "Literary / Narrative",
+          "failure_mode": "english_code_switching",
+          "split": "test",
+          "logp_chosen": -67.9757,
+          "logp_rejected": -60.9648,
+          "margin": -7.0109,
+          "preferred_chosen": false
+        },
+        {
+          "id": "dpo_38",
+          "register": "Pedagogical / School",
+          "failure_mode": "subword_gibberish",
+          "split": "test",
+          "logp_chosen": -95.3301,
+          "logp_rejected": -70.1209,
+          "margin": -25.2093,
+          "preferred_chosen": false
+        }
+      ]
+    },
+    "after_dpo": {
+      "count": 6,
+      "mean_margin": -19.2461,
+      "preference_accuracy": 0.3333,
+      "pairs": [
+        {
+          "id": "dpo_13",
+          "register": "Conversational",
+          "failure_mode": "english_code_switching",
+          "split": "test",
+          "logp_chosen": -69.9852,
+          "logp_rejected": -69.0383,
+          "margin": -0.9468,
+          "preferred_chosen": false
+        },
+        {
+          "id": "dpo_14",
+          "register": "Conversational",
+          "failure_mode": "repetition_loop",
+          "split": "test",
+          "logp_chosen": -104.896,
+          "logp_rejected": -36.018,
+          "margin": -68.878,
+          "preferred_chosen": false
+        },
+        {
+          "id": "dpo_25",
+          "register": "News (Local Government)",
+          "failure_mode": "repetition_loop",
+          "split": "test",
+          "logp_chosen": -86.7592,
+          "logp_rejected": -45.4253,
+          "margin": -41.3339,
+          "preferred_chosen": false
+        },
+        {
+          "id": "dpo_26",
+          "register": "News (Police Report)",
+          "failure_mode": "english_code_switching",
+          "split": "test",
+          "logp_chosen": -68.3581,
+          "logp_rejected": -71.0322,
+          "margin": 2.6741,
+          "preferred_chosen": true
+        },
+        {
+          "id": "dpo_37",
+          "register": "Literary / Narrative",
+          "failure_mode": "english_code_switching",
+          "split": "test",
+          "logp_chosen": -64.3129,
+          "logp_rejected": -69.3288,
+          "margin": 5.0159,
+          "preferred_chosen": true
+        },
+        {
+          "id": "dpo_38",
+          "register": "Pedagogical / School",
+          "failure_mode": "subword_gibberish",
+          "split": "test",
+          "logp_chosen": -93.4865,
+          "logp_rejected": -81.4788,
+          "margin": -12.0077,
+          "preferred_chosen": false
+        }
+      ]
+    }
+  },
+  "train_pairs": {
+    "before_dpo": {
+      "count": 32,
+      "mean_margin": -26.6267,
+      "preference_accuracy": 0.125
+    },
+    "after_dpo": {
+      "count": 32,
+      "mean_margin": -13.5645,
+      "preference_accuracy": 0.3125
+    }
+  },
+  "generation_summary": {
+    "prompt_count": 11,
+    "before_dpo": {
+      "greedy": {
+        "avg_distinct_1": 0.2618,
+        "avg_distinct_2": 0.2906,
+        "avg_rep_3_rate": 0.6818,
+        "avg_eng_intrusion_rate": 0.0,
+        "total_eng_tokens": 0
+      },
+      "sampled": {
+        "avg_distinct_1": 0.6645,
+        "avg_distinct_2": 0.8897,
+        "avg_rep_3_rate": 0.0171,
+        "avg_eng_intrusion_rate": 0.0043,
+        "total_eng_tokens": 1
+      }
+    },
+    "after_dpo": {
+      "greedy": {
+        "avg_distinct_1": 0.2804,
+        "avg_distinct_2": 0.3047,
+        "avg_rep_3_rate": 0.6676,
+        "avg_eng_intrusion_rate": 0.0,
+        "total_eng_tokens": 0
+      },
+      "sampled": {
+        "avg_distinct_1": 0.7337,
+        "avg_distinct_2": 0.9568,
+        "avg_rep_3_rate": 0.0091,
+        "avg_eng_intrusion_rate": 0.0041,
+        "total_eng_tokens": 1
+      }
+    }
+  },
+  "validation_perplexity": {
+    "before_dpo": {
+      "val_blocks": 219,
+      "block_size": 256,
+      "val_tokens_evaluated": 56064,
+      "val_loss": 3.5518,
+      "val_perplexity": 34.88
+    },
+    "after_dpo": {
+      "val_blocks": 219,
+      "block_size": 256,
+      "val_tokens_evaluated": 56064,
+      "val_loss": 3.5649,
+      "val_perplexity": 35.33
+    }
+  },
+  "generations": {
+    "before_dpo": [
+      {
+        "id": "P1_conversational",
+        "register": "Conversational",
+        "prompt": "Kumusta ka? Manghinaut ko nga",
+        "greedy_continuation": "nagkalit ang mga kalibutan?\nNagkalibutan ang mga kalibutan?\nNagkalibutan ang mga kalibutan?\nNagkalibutan ang mga kalibutan?\nN",
+        "greedy_metrics": {
+          "word_count": 17,
+          "distinct_1": 0.3529,
+          "distinct_2": 0.375,
+          "rep_3_rate": 0.6,
+          "eng_intrusion_rate": 0.0,
+          "eng_count": 0
+        },
+        "sampled_continuation": "hinungdan?\nNakita ka?\nSa mga kaso kita.\nPagkamalit nga nakita na!\nNakita ka?\nPagkamalit nga kaso kita!\nNakita",
+        "sampled_metrics": {
+          "word_count": 18,
+          "distinct_1": 0.5556,
+          "distinct_2": 0.8235,
+          "rep_3_rate": 0.0,
+          "eng_intrusion_rate": 0.0,
+          "eng_count": 0
+        }
+      },
+      {
+        "id": "P2_news_gov",
+        "register": "News (Local Government)",
+        "prompt": "Gipahibalo sa lokal nga kagamhanan sa Sugbo nga",
+        "greedy_continuation": "gipahibalo sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan",
+        "greedy_metrics": {
+          "word_count": 23,
+          "distinct_1": 0.1304,
+          "distinct_2": 0.1364,
+          "rep_3_rate": 0.8571,
+          "eng_intrusion_rate": 0.0,
+          "eng_count": 0
+        },
+        "sampled_continuation": "si Marlano Ningtong nagdula nga sa ilang kahapon sa kadtong Negros Oriental. Mao kini sa ilang kahapon ang kahapon sa kahapon nga kahapon nga lokal nga kah",
+        "sampled_metrics": {
+          "word_count": 27,
+          "distinct_1": 0.5926,
+          "distinct_2": 0.8462,
+          "rep_3_rate": 0.04,
+          "eng_intrusion_rate": 0.0,
+          "eng_count": 0
+        }
+      },
+      {
+        "id": "P3_news_police",
+        "register": "News (Police Report)",
+        "prompt": "Matud pa sa kapulisan sa dakbayan,",
+        "greedy_continuation": "nga nagpuyo sa mga kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa",
+        "greedy_metrics": {
+          "word_count": 24,
+          "distinct_1": 0.2083,
+          "distinct_2": 0.2609,
+          "rep_3_rate": 0.7273,
+          "eng_intrusion_rate": 0.0,
+          "eng_count": 0
+        },
+        "sampled_continuation": "niingon nga nakadakita sa pagdala sa mga kapulisan sa ilang iyang nahimong dakbayan nga gikahimong kapulisan sa pagdala sa kapulisan. Gisubli ni",
+        "sampled_metrics": {
+          "word_count": 22,
+          "distinct_1": 0.6364,
+          "distinct_2": 0.8571,
+          "rep_3_rate": 0.05,
+          "eng_intrusion_rate": 0.0,
+          "eng_count": 0
+        }
+      },
+      {
+        "id": "P4_literary",
+        "register": "Literary / Narrative",
+        "prompt": "Sa usa ka gamay nga baryo duol sa dagat, adunay",
+        "greedy_continuation": "mga kalibutan sa mga kalibutan sa mga kalibutan. Sumala pa sa mga kalibutan, gipahigayon niini ang mga kalibutan sa mga kalibutan sa mga kalib",
+        "greedy_metrics": {
+          "word_count": 24,
+          "distinct_1": 0.375,
+          "distinct_2": 0.4783,
+          "rep_3_rate": 0.4091,
+          "eng_intrusion_rate": 0.0,
+          "eng_count": 0
+        },
+        "sampled_continuation": "gipahibawo og daghang kapulisan, ug uban ang nagkahuman sa kalibutan sa lalaki. Sumala pa sa mga nag-abot sa usa ka gamay nga nahinay sa",
+        "sampled_metrics": {
+          "word_count": 24,
+          "distinct_1": 0.8333,
+          "distinct_2": 1.0,
+          "rep_3_rate": 0.0,
+          "eng_intrusion_rate": 0.0,
+          "eng_count": 0
+        }
+      },
+      {
+        "id": "P5_pedagogical",
+        "register": "Pedagogical / School",
+        "prompt": "Ang mga bata sa eskwelahan malipayon nga",
+        "greedy_continuation": "gipahigayon sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapul",
+        "greedy_metrics": {
+          "word_count": 23,
+          "distinct_1": 0.1739,
+          "distinct_2": 0.1818,
+          "rep_3_rate": 0.8095,
+          "eng_intrusion_rate": 0.0,
+          "eng_count": 0
+        },
+        "sampled_continuation": "gihatag ang iyang mga bata nga gipahimo ang nagpahigayon nga gipahilanglan sa kalibutan ug daghan ang mga bata.\nPagkaron sila kaambit ang m",
+        "sampled_metrics": {
+          "word_count": 23,
+          "distinct_1": 0.7391,
+          "distinct_2": 0.9545,
+          "rep_3_rate": 0.0,
+          "eng_intrusion_rate": 0.0,
+          "eng_count": 0
+        }
+      },
+      {
+        "id": "dpo_13",
+        "register": "DPO Test (Conversational)",
+        "prompt": "Nagtuo ko nga ang tinuod nga panaghigalaay",
+        "greedy_continuation": "sa mga kalibutan.\nNagkahapon ang mga kalibutan.\nNagkahapon ang mga kalibutan.\nNagkahapon ang mga kalibutan.\nNagkahapon ang mga k",
+        "greedy_metrics": {
+          "word_count": 19,
+          "distinct_1": 0.3158,
+          "distinct_2": 0.3333,
+          "rep_3_rate": 0.6471,
+          "eng_intrusion_rate": 0.0,
+          "eng_count": 0
+        },
+        "sampled_continuation": "on, ug ang pagsulod sa kaso.\nKATAPUSAN SA NEGLOS Abril ug MGA NAGPATAY NGA KARONG MGA NAGPATAY NGA KATAPUSAN SA NEGL",
+        "sampled_metrics": {
+          "word_count": 21,
+          "distinct_1": 0.6667,
+          "distinct_2": 0.85,
+          "rep_3_rate": 0.0526,
+          "eng_intrusion_rate": 0.0476,
+          "eng_count": 1
+        }
+      },
+      {
+        "id": "dpo_14",
+        "register": "DPO Test (Conversational)",
+        "prompt": "Sayo pa sa buntag mitindog na si Tatay aron",
+        "greedy_continuation": "makatabang sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan",
+        "greedy_metrics": {
+          "word_count": 23,
+          "distinct_1": 0.1304,
+          "distinct_2": 0.1364,
+          "rep_3_rate": 0.8571,
+          "eng_intrusion_rate": 0.0,
+          "eng_count": 0
+        },
+        "sampled_continuation": "makaayo nga giingong mga kahapon sa kapulisan sa iyang giingong mga kawo sa tawo.\nSi Tatay ug nagdula sa iyang gisulat nga mga kah",
+        "sampled_metrics": {
+          "word_count": 24,
+          "distinct_1": 0.6667,
+          "distinct_2": 0.913,
+          "rep_3_rate": 0.0,
+          "eng_intrusion_rate": 0.0,
+          "eng_count": 0
+        }
+      },
+      {
+        "id": "dpo_25",
+        "register": "DPO Test (News (Local Government))",
+        "prompt": "Nanawagan ang buhatan sa agrikultura ngadto sa",
+        "greedy_continuation": "mga kalibutan sa pagpahigayon sa pagpahigayon sa pagpahigayon sa pagpahigayon sa pagpahigayon sa pagpahigayon sa pagpahigayon sa pagpahig",
+        "greedy_metrics": {
+          "word_count": 18,
+          "distinct_1": 0.2778,
+          "distinct_2": 0.2941,
+          "rep_3_rate": 0.6875,
+          "eng_intrusion_rate": 0.0,
+          "eng_count": 0
+        },
+        "sampled_continuation": "ilang usa ka mga tawo nga gipangatay sa panghitabo sa mga pinaagi sa PNP. Sumala pa sa PNP, niini ang kaso nga nakita-an sa PNP niadtong S",
+        "sampled_metrics": {
+          "word_count": 27,
+          "distinct_1": 0.7037,
+          "distinct_2": 0.9231,
+          "rep_3_rate": 0.0,
+          "eng_intrusion_rate": 0.0,
+          "eng_count": 0
+        }
+      },
+      {
+        "id": "dpo_26",
+        "register": "DPO Test (News (Police Report))",
+        "prompt": "Gibantayan pag-ayo sa mga tinugyanan sa balaod ang",
+        "greedy_continuation": "mga tawo sa mga tawo sa mga tawo. Gipahigayon ni Mayor Eduardo Estrada ang mga tawo sa mga tawo sa mga tawo sa mga tawo sa mga taw",
+        "greedy_metrics": {
+          "word_count": 28,
+          "distinct_1": 0.3571,
+          "distinct_2": 0.4074,
+          "rep_3_rate": 0.5385,
+          "eng_intrusion_rate": 0.0,
+          "eng_count": 0
+        },
+        "sampled_continuation": "iyang mga sakyanan. Ang iyang mga tinugyanan ug mga tinugyanan sa balaod sa katuman sa pagtukod sa pag-uporta sa balaod. Gikan sa katuman og kat",
+        "sampled_metrics": {
+          "word_count": 25,
+          "distinct_1": 0.56,
+          "distinct_2": 0.8333,
+          "rep_3_rate": 0.0,
+          "eng_intrusion_rate": 0.0,
+          "eng_count": 0
+        }
+      },
+      {
+        "id": "dpo_37",
+        "register": "DPO Test (Literary / Narrative)",
+        "prompt": "Gikuptan sa inahan ang kamot sa iyang anak",
+        "greedy_continuation": ".\nKATAPUSAN SA KAMOTAN, NAGPASA-AN SA KAMOTAN, NAGPASA-AN SA KAMOTAN, NAGPASA-AN SA KAMOTAN, NAGPASA-AN SA",
+        "greedy_metrics": {
+          "word_count": 14,
+          "distinct_1": 0.2857,
+          "distinct_2": 0.3077,
+          "rep_3_rate": 0.6667,
+          "eng_intrusion_rate": 0.0,
+          "eng_count": 0
+        },
+        "sampled_continuation": "sa mga bata. Gisugdan ni Tugag ang iyang anak nga mag-usi og mga tawo sa iyang anak.\nNagkahapon og tawo sa mga bata. Nipahinab",
+        "sampled_metrics": {
+          "word_count": 24,
+          "distinct_1": 0.625,
+          "distinct_2": 0.8261,
+          "rep_3_rate": 0.0455,
+          "eng_intrusion_rate": 0.0,
+          "eng_count": 0
+        }
+      },
+      {
+        "id": "dpo_38",
+        "register": "DPO Test (Pedagogical / School)",
+        "prompt": "Matag Biyernes sa hapon, ang mga kabataan",
+        "greedy_continuation": "nga nag-abot sa mga kabataan nga nag-abot sa mga kabataan nga nag-abot sa mga kabataan nga nag-abot sa mga kabataan nga nag",
+        "greedy_metrics": {
+          "word_count": 22,
+          "distinct_1": 0.2727,
+          "distinct_2": 0.2857,
+          "rep_3_rate": 0.7,
+          "eng_intrusion_rate": 0.0,
+          "eng_count": 0
+        },
+        "sampled_continuation": "sa pagpabak sa usa ka dili pa ang mga barangay nga nakita og gisubli sa sakyanan. Giila ang kamatayon nga pagpabak sa mga kabataan, apan k",
+        "sampled_metrics": {
+          "word_count": 26,
+          "distinct_1": 0.7308,
+          "distinct_2": 0.96,
+          "rep_3_rate": 0.0,
+          "eng_intrusion_rate": 0.0,
+          "eng_count": 0
+        }
+      }
+    ],
+    "after_dpo": [
+      {
+        "id": "P1_conversational",
+        "register": "Conversational",
+        "prompt": "Kumusta ka? Manghinaut ko nga",
+        "greedy_continuation": "nagkalit ang mga kalibutan.\nNagkalibutan ang mga kalibutan.\nNagkalibutan ang mga kalibutan.\nNagkalibutan ang mga kalibutan.\nN",
+        "greedy_metrics": {
+          "word_count": 17,
+          "distinct_1": 0.3529,
+          "distinct_2": 0.375,
+          "rep_3_rate": 0.6,
+          "eng_intrusion_rate": 0.0,
+          "eng_count": 0
+        },
+        "sampled_continuation": "hinungdan nga nakita ang paglupad niini.\nGitugaw si Lola ang ilang iyang nakatabang pagdumala nga makahinumog si Lola.\nNaghinumog si Lola",
+        "sampled_metrics": {
+          "word_count": 21,
+          "distinct_1": 0.7143,
+          "distinct_2": 0.9,
+          "rep_3_rate": 0.0,
+          "eng_intrusion_rate": 0.0,
+          "eng_count": 0
+        }
+      },
+      {
+        "id": "P2_news_gov",
+        "register": "News (Local Government)",
+        "prompt": "Gipahibalo sa lokal nga kagamhanan sa Sugbo nga",
+        "greedy_continuation": "gipahigayon nga gipahigayon nga gipahigayon nga gipahigayon nga gipahigayon nga gipahigayon nga gipahigayon nga gipahig",
+        "greedy_metrics": {
+          "word_count": 15,
+          "distinct_1": 0.2,
+          "distinct_2": 0.2143,
+          "rep_3_rate": 0.7692,
+          "eng_intrusion_rate": 0.0,
+          "eng_count": 0
+        },
+        "sampled_continuation": "si Marlano nga pag-atubang sa iyang biktima sa pasahero nga nagtukod sa iyang panglakip sa biktima. Gipahigayon siya nga gikusil ang mga",
+        "sampled_metrics": {
+          "word_count": 22,
+          "distinct_1": 0.6818,
+          "distinct_2": 0.9524,
+          "rep_3_rate": 0.0,
+          "eng_intrusion_rate": 0.0,
+          "eng_count": 0
+        }
+      },
+      {
+        "id": "P3_news_police",
+        "register": "News (Police Report)",
+        "prompt": "Matud pa sa kapulisan sa dakbayan,",
+        "greedy_continuation": "nagpahigayon ang mga kalibutan nga gipahigayon nga gipahigayon nga gipahigayon nga gipahigayon nga gipahigayon nga gipahig",
+        "greedy_metrics": {
+          "word_count": 16,
+          "distinct_1": 0.4375,
+          "distinct_2": 0.4667,
+          "rep_3_rate": 0.5,
+          "eng_intrusion_rate": 0.0,
+          "eng_count": 0
+        },
+        "sampled_continuation": "niingon nga nagpadayon sa pagdala sa mga kahoy nga ilang iyang nahuman nga gipakapulisan nga ug kwarta.\nNagkaon kini og pagdala sa kap",
+        "sampled_metrics": {
+          "word_count": 23,
+          "distinct_1": 0.7391,
+          "distinct_2": 0.9545,
+          "rep_3_rate": 0.0,
+          "eng_intrusion_rate": 0.0,
+          "eng_count": 0
+        }
+      },
+      {
+        "id": "P4_literary",
+        "register": "Literary / Narrative",
+        "prompt": "Sa usa ka gamay nga baryo duol sa dagat, adunay",
+        "greedy_continuation": "mga kaso nga nagkalain-laing kini.\nNagkalain-laing kini nga nagkalain-laing kini nga nagkalain-laing kini nga nagkalain",
+        "greedy_metrics": {
+          "word_count": 15,
+          "distinct_1": 0.4,
+          "distinct_2": 0.5,
+          "rep_3_rate": 0.3846,
+          "eng_intrusion_rate": 0.0,
+          "eng_count": 0
+        },
+        "sampled_continuation": "gipahibawo og daghang klase nga pagkadlok nga karong hapon nga mga iyang mga tawo nga naglalip na sa baryo sa mga pahinayon",
+        "sampled_metrics": {
+          "word_count": 22,
+          "distinct_1": 0.7273,
+          "distinct_2": 1.0,
+          "rep_3_rate": 0.0,
+          "eng_intrusion_rate": 0.0,
+          "eng_count": 0
+        }
+      },
+      {
+        "id": "P5_pedagogical",
+        "register": "Pedagogical / School",
+        "prompt": "Ang mga bata sa eskwelahan malipayon nga",
+        "greedy_continuation": "gipahigayon nga gipahigayon nga gipahigayon nga gipahigayon nga gipahigayon nga gipahigayon nga gipahigayon nga gipahig",
+        "greedy_metrics": {
+          "word_count": 15,
+          "distinct_1": 0.2,
+          "distinct_2": 0.2143,
+          "rep_3_rate": 0.7692,
+          "eng_intrusion_rate": 0.0,
+          "eng_count": 0
+        },
+        "sampled_continuation": "gihatag ang iyang iyang iyang paghimo nga nagtukod og mga pulis naan nga mga tigpahuman nga iyang mga balaod nga giingong mananan. Apan gi",
+        "sampled_metrics": {
+          "word_count": 24,
+          "distinct_1": 0.6667,
+          "distinct_2": 0.9565,
+          "rep_3_rate": 0.0,
+          "eng_intrusion_rate": 0.0,
+          "eng_count": 0
+        }
+      },
+      {
+        "id": "dpo_13",
+        "register": "DPO Test (Conversational)",
+        "prompt": "Nagtuo ko nga ang tinuod nga panaghigalaay",
+        "greedy_continuation": "nga nagpahigayon nga nagpahigayon nga nagpahigayon nga nagpahigayon nga nagpahigayon nga nagpahigayon nga nagpah",
+        "greedy_metrics": {
+          "word_count": 14,
+          "distinct_1": 0.2143,
+          "distinct_2": 0.2308,
+          "rep_3_rate": 0.75,
+          "eng_intrusion_rate": 0.0,
+          "eng_count": 0
+        },
+        "sampled_continuation": "on, ug ang pamilya nag-isakit nga katapusan sa sakop. Gihatag na ang mga mga iyang kalipayon nga nagpahuman nga gidulaan nga gid",
+        "sampled_metrics": {
+          "word_count": 22,
+          "distinct_1": 0.7727,
+          "distinct_2": 1.0,
+          "rep_3_rate": 0.0,
+          "eng_intrusion_rate": 0.0455,
+          "eng_count": 1
+        }
+      },
+      {
+        "id": "dpo_14",
+        "register": "DPO Test (Conversational)",
+        "prompt": "Sayo pa sa buntag mitindog na si Tatay aron",
+        "greedy_continuation": "makatabang ang mga kalibutan.\nNagkahuman na si Tatay ang mga kalibutan.\nNagkahuman na si Tatay ang mga kalibutan.\nNagkahuman na si Tatay ang",
+        "greedy_metrics": {
+          "word_count": 23,
+          "distinct_1": 0.3478,
+          "distinct_2": 0.3636,
+          "rep_3_rate": 0.619,
+          "eng_intrusion_rate": 0.0,
+          "eng_count": 0
+        },
+        "sampled_continuation": "makaayo nga giingong mga dili diay unang kalibutan nga pagkamatay og mga tawo.\nSi Tatay ug nagdala pa ang iyang duha ka dili mga kap",
+        "sampled_metrics": {
+          "word_count": 25,
+          "distinct_1": 0.84,
+          "distinct_2": 1.0,
+          "rep_3_rate": 0.0,
+          "eng_intrusion_rate": 0.0,
+          "eng_count": 0
+        }
+      },
+      {
+        "id": "dpo_25",
+        "register": "DPO Test (News (Local Government))",
+        "prompt": "Nanawagan ang buhatan sa agrikultura ngadto sa",
+        "greedy_continuation": "pagpahigayon sa pagpahigayon sa pagpahigayon sa pagpahigayon sa pagpahigayon sa pagpahigayon sa pagpahigayon sa pagpahigayon sa pagpahig",
+        "greedy_metrics": {
+          "word_count": 17,
+          "distinct_1": 0.1765,
+          "distinct_2": 0.1875,
+          "rep_3_rate": 0.8,
+          "eng_intrusion_rate": 0.0,
+          "eng_count": 0
+        },
+        "sampled_continuation": "ilang usa ka mga tawo nga gipangatayon sa mga opisyal. Nakahanglan siya si Domingo, \"Hinungdan na kini nga nagdili na kung unsa nga dili g",
+        "sampled_metrics": {
+          "word_count": 25,
+          "distinct_1": 0.84,
+          "distinct_2": 1.0,
+          "rep_3_rate": 0.0,
+          "eng_intrusion_rate": 0.0,
+          "eng_count": 0
+        }
+      },
+      {
+        "id": "dpo_26",
+        "register": "DPO Test (News (Police Report))",
+        "prompt": "Gibantayan pag-ayo sa mga tinugyanan sa balaod ang",
+        "greedy_continuation": "pag-ayo nga mga kaso.\nNagkahapon ang pag-ayo nga mga kaso.\nNagkahapon ang pag-ayo nga mga kaso.\nNagkahapon ang pag-ay",
+        "greedy_metrics": {
+          "word_count": 19,
+          "distinct_1": 0.3684,
+          "distinct_2": 0.3889,
+          "rep_3_rate": 0.5882,
+          "eng_intrusion_rate": 0.0,
+          "eng_count": 0
+        },
+        "sampled_continuation": "giingong sakyanan. Ang pagkaon nga konsehal ug mga pagkaon nga namit-an ang pagpanganod ang pagkaon. Ang giingong pagkaon nga namit-an ang mga",
+        "sampled_metrics": {
+          "word_count": 22,
+          "distinct_1": 0.4545,
+          "distinct_2": 0.7619,
+          "rep_3_rate": 0.1,
+          "eng_intrusion_rate": 0.0,
+          "eng_count": 0
+        }
+      },
+      {
+        "id": "dpo_37",
+        "register": "DPO Test (Literary / Narrative)",
+        "prompt": "Gikuptan sa inahan ang kamot sa iyang anak",
+        "greedy_continuation": ".\nNagkahapon ang iyang anak.\nNagkahapon ang iyang anak.\nNagkahapon ang iyang anak.\nNagkahapon ang iyang anak.\nNagkahapon ang iyang anak",
+        "greedy_metrics": {
+          "word_count": 20,
+          "distinct_1": 0.2,
+          "distinct_2": 0.2105,
+          "rep_3_rate": 0.7778,
+          "eng_intrusion_rate": 0.0,
+          "eng_count": 0
+        },
+        "sampled_continuation": ".\nAng inahan ni Kompanyo, nakita ang iyang anak.\nMga dili og dapit.\nKATAPUSAN SA PAG-INAN, MGA DOUGON, GISUGYANA, KATAP",
+        "sampled_metrics": {
+          "word_count": 19,
+          "distinct_1": 0.8947,
+          "distinct_2": 1.0,
+          "rep_3_rate": 0.0,
+          "eng_intrusion_rate": 0.0,
+          "eng_count": 0
+        }
+      },
+      {
+        "id": "dpo_38",
+        "register": "DPO Test (Pedagogical / School)",
+        "prompt": "Matag Biyernes sa hapon, ang mga kabataan",
+        "greedy_continuation": "nga gipahigayon nga gipahigayon nga gipahigayon nga gipahigayon nga gipahigayon nga gipahigayon nga gipahigayon nga gip",
+        "greedy_metrics": {
+          "word_count": 16,
+          "distinct_1": 0.1875,
+          "distinct_2": 0.2,
+          "rep_3_rate": 0.7857,
+          "eng_intrusion_rate": 0.0,
+          "eng_count": 0
+        },
+        "sampled_continuation": "nga pag-akong adlaw, dili pa ang mga barangay nga nakita og gisugdan nga aduna'y mga kahimtangan nga pagpahuman kini nga makasaka sa mga",
+        "sampled_metrics": {
+          "word_count": 23,
+          "distinct_1": 0.7391,
+          "distinct_2": 1.0,
+          "rep_3_rate": 0.0,
+          "eng_intrusion_rate": 0.0,
+          "eng_count": 0
+        }
+      }
+    ]
+  }
+}
