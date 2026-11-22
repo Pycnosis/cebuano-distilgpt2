@@ -1,0 +1,44 @@
+{
+  "model": "distilgpt2",
+  "adapter": "distilgpt2-cebuano-lora",
+  "author": "Joshua (@JoshyEyeBa11)",
+  "prompts_evaluated": 5,
+  "summary_by_strategy": {
+    "Greedy": {
+      "rep_2gram": 0.714,
+      "rep_3gram": 0.682,
+      "rep_4gram": 0.655,
+      "distinct_1": 0.384,
+      "distinct_2": 0.412,
+      "avg_words": 38.4,
+      "note": "Prone to cyclic repetition basins"
+    },
+    "Top-k Sampling": {
+      "rep_2gram": 0.336,
+      "rep_3gram": 0.284,
+      "rep_4gram": 0.241,
+      "distinct_1": 0.692,
+      "distinct_2": 0.748,
+      "avg_words": 44.2,
+      "note": "Diverse but occasionally disjointed"
+    },
+    "Nucleus (Top-p) Sampling": {
+      "rep_2gram": 0.251,
+      "rep_3gram": 0.216,
+      "rep_4gram": 0.185,
+      "distinct_1": 0.781,
+      "distinct_2": 0.842,
+      "avg_words": 42.8,
+      "note": "Best grammatical balance and natural flow"
+    },
+    "Beam Search": {
+      "rep_2gram": 0.038,
+      "rep_3gram": 0.021,
+      "rep_4gram": 0.012,
+      "distinct_1": 0.892,
+      "distinct_2": 0.958,
+      "avg_words": 36.2,
+      "note": "High cohesion with zero n-gram loops"
+    }
+  }
+}
