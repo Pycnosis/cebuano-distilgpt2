@@ -1,6 +1,5 @@
 # Step 4 Written Analysis: Positional Embeddings and Architectural Paradigms in Low-Resource Language Modeling
 
-**Author:** Joshua (`@JoshyEyeBa11`)  
 **Project:** Teaching DistilGPT2 Cebuano: Fine-Tuning, Decoding & Alignment  
 **Target Model:** `distilgpt2` (82M parameters, 6 layers, 12 attention heads, $d_{\text{model}} = 768$, max context $T = 1024$)  
 **Datasets:** `josephimperial/CebuaNER` (CC BY-NC 4.0), `filbench/cebuano-readability` (CC BY 4.0)
