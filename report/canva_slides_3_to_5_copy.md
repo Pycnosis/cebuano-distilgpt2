@@ -1,7 +1,7 @@
 # Canva Slide Deck: Slides 3, 4, and 5 Copy & Defense Speaker Notes
 
 **Project:** Teaching DistilGPT2 Cebuano: Fine-Tuning, Decoding & Alignment  
-**Lead Presenter / Author:** Joshua (`@JoshyEyeBa11`)  
+**Authors (Slides 3–5):** Joshua (`@JoshyEyeBa11` — Slides 3 & 5), Lej (`@lejxz` — Slide 4 & Cross-Slide Cebuano QA)  
 **Team Members:** Nico (`@Pycnosis`), Lej (`@lejxz`), Joshua (`@JoshyEyeBa11`)  
 **Repository:** [https://github.com/Pycnosis/cebuano-distilgpt2](https://github.com/Pycnosis/cebuano-distilgpt2)
 
@@ -48,18 +48,22 @@
 
 ### 2. Visual Layout & Assets to Embed
 - **Primary Asset:** `results/step3_dpo_margins_chart.png` (Distribution of log-probability margins $\Delta = \log \pi(y_w) - \log \pi(y_l)$ before vs. after DPO).
-- **Secondary Asset:** Qualitative triplet comparison box (`prompt`, `chosen`, `rejected`).
-- **Mathematical Callout Box:** DPO closed-form objective vs. 4-model PPO RLHF architecture.
+- **Secondary Asset:** Qualitative triplet comparison box (`dpo_37` held-out test triplet:
+  - *Prompt:* `"Gikuptan sa inahan ang kamot sa iyang anak "`
+  - *Chosen (Idiomatic Cebuano):* `"samtang naglakaw sila padulong sa gamay nga simbahan sa baryo."`
+  - *Rejected (English Drift):* `"as they walked quietly along the narrow path near the river."`
+  - *Log-Prob Margin ($\Delta$) Shift:* **`-7.0109` $\to$ `+5.0159` (`+12.0268` gain)**).
+- **Mathematical Callout Box:** DPO closed-form objective vs. 4-model PPO RLHF architecture (using frozen merged Step 1 Cebuano LoRA as $\pi_{\text{ref}}$).
 
 ### 3. Key Content & Metric Cards
 - **Cebuano Preference Dataset (`cebuano_dpo_preferences.jsonl`):**
-  - **`38` Original Triplets:** `32` training pairs, `6` held-out evaluation pairs, spanning Conversational, News, and Narrative registers.
-  - **Target Behavior:** Clean, idiomatic Cebuano continuation; suppressing English code-switching, repetitive n-gram loops, and subword gibberish.
-  - **100% Native-Speaker Verified:** Curated and QA'd by `@lejxz` to ensure authentic Cebuano syntax and morphology without machine-translation artifacts.
+  - **`38` Original Triplets:** `32` training pairs, `6` held-out evaluation pairs, spanning Conversational (`14`), News/Gov (`12`), and Literary/School (`12`) registers.
+  - **Target Behavior:** Clean, idiomatic Cebuano continuation; suppressing English code-switching (`15` pairs), repetitive n-gram loops (`13` pairs), and subword gibberish (`10` pairs).
+  - **100% Native-Speaker Verified:** Curated and QA'd by `@lejxz` to ensure authentic Cebuano syntax and case/focus morphology (`ang`, `mga`, `sa`, `nga`, `ug`, `og`, `aron`) without machine-translation artifacts.
 - **DPO Empirical Gains:**
-  - **Held-Out Test Preference Accuracy:** Shifted from **`0.0%` to `33.3%`** (**`+33.3 pp`**), with **`100%`** implicit reward accuracy on test pairs (`eval_loss = 0.3502`).
-  - **Test Mean Margin Shift:** Improved by **`+8.35`** (`-27.60` $\to$ `-19.25`), with all 6 held-out test pairs improving strictly.
-  - **Sampled Diversity:** `distinct-2` lexical diversity improved from **`0.8897` to `0.9568`** (`+0.0671`).
+  - **Held-Out Test Preference Accuracy:** Shifted from **`0.0%` to `33.3%`** (**`+33.3 pp`**; `dpo_26` `-3.46 -> +2.67` and `dpo_37` `-7.01 -> +5.02` flipped positive), with **`100%`** implicit DPO reward accuracy (`eval_loss = 0.3502`, `eval_rewards/margins = +0.9105`).
+  - **Test Mean Margin Shift:** Improved by **`+8.3521`** (`-27.5982` $\to$ `-19.2461`), with **all 6 held-out test pairs improving strictly** (`+2.88` to `+13.20`).
+  - **Repetition & Diversity Shift:** Greedy 3-gram repetition dropped **`68.18%` $\to$ `66.76%`** (`-1.42 pp`) and sampled `distinct-2` lexical diversity improved from **`0.8897` to `0.9568`** (`+0.0671`).
   - **Perplexity Stability:** Validation perplexity remained stable at **`35.33`** (vs. `34.88` post-LoRA), demonstrating zero alignment tax or catastrophic forgetting.
 - **DPO vs. Full RLHF (PPO):**
   $$\mathcal{L}_{\text{DPO}} = -\mathbb{E}_{(x, y_w, y_l)} \left[ \log \sigma \left( \beta \log \frac{\pi_\theta(y_w \mid x)}{\pi_{\text{ref}}(y_w \mid x)} - \beta \log \frac{\pi_\theta(y_l \mid x)}{\pi_{\text{ref}}(y_l \mid x)} \right) \right]$$

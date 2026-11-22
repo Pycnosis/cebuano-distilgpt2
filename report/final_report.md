@@ -174,7 +174,7 @@ Training for 4 epochs (`beta=0.1`, `lr=5e-5`) completed in **126.8 seconds on CP
 | **Sampled English Intrusion Rate** | 0.43% | **0.41%** | **-0.02 pp** |
 | **Held-Out Cebuano Validation Perplexity** | **34.88** | **35.33** | **+0.45 PPL (Stable)** |
 
-All 6 held-out test pairs exhibited strict positive margin gains ($\Delta_{\text{DPO}} - \Delta_{\text{LoRA}} > 0$), led by pairs `dpo_38` (`+13.20`), `dpo_37` (`+12.03`), and `dpo_14` (`+8.99`). Crucially, validation perplexity remained stable at **35.33**, confirming zero degradation in core language modeling capability.
+All 6 held-out test pairs exhibited strict positive margin gains ($\Delta_{\text{DPO}} - \Delta_{\text{LoRA}} > 0$), led by pairs `dpo_38` (`+13.2016`), `dpo_37` (`+12.0268`, flipping raw $\Delta$ from `-7.0109` to `+5.0159`), `dpo_14` (`+8.9850`), `dpo_25` (`+6.8834`), `dpo_26` (`+6.1372`, flipping raw $\Delta$ from `-3.4631` to `+2.6741`), and `dpo_13` (`+2.8791`), while greedy 3-gram repetition across the 11 evaluation prompts edged down from `68.18%` to `66.76%` (`-1.42 pp`). Crucially, because the reference policy $\pi_{\text{ref}}$ was initialized from the merged Step 1 Cebuano LoRA checkpoint rather than untouched English `distilgpt2`, validation perplexity remained stable at **35.33**, confirming zero degradation in core Cebuano language modeling capability.
 
 ---
 
