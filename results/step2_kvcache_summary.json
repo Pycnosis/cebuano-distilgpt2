@@ -1,0 +1,457 @@
+{
+  "model": "distilgpt2 + checkpoints/distilgpt2-cebuano-lora",
+  "primary_device": "cpu",
+  "devices_benchmarked": [
+    "cpu",
+    "cuda"
+  ],
+  "architecture": {
+    "n_layer": 6,
+    "n_head": 12,
+    "d_model": 768,
+    "d_head": 64,
+    "max_positions": 1024,
+    "kv_bytes_per_token_fp32": 36864,
+    "kv_bytes_per_token_fp16": 18432,
+    "kv_cache_kb_at_1024_fp32": 36864.0,
+    "kv_cache_kb_at_1024_fp16": 18432.0
+  },
+  "prompt": {
+    "id": "P2_news_gov",
+    "register": "News (Local Government)",
+    "text": "Gipahibalo sa lokal nga kagamhanan sa Sugbo nga",
+    "prompt_tokens": 21
+  },
+  "benchmark_config": {
+    "decoding": "greedy (do_sample=False)",
+    "fixed_length_enforced": true,
+    "lengths": [
+      32,
+      64,
+      128,
+      256
+    ],
+    "cpu_timed_runs": 3,
+    "gpu_timed_runs": 5
+  },
+  "benchmarks": {
+    "cpu": {
+      "device": "cpu",
+      "device_name": "AMD Ryzen 7 7735HS with Radeon Graphics",
+      "dtype": "torch.float32",
+      "dtype_bytes": 4,
+      "timed_runs_per_setting": 3,
+      "results": [
+        {
+          "max_new_tokens": 32,
+          "prompt_tokens": 21,
+          "total_sequence_tokens": 53,
+          "with_cache": {
+            "max_new_tokens": 32,
+            "prompt_tokens": 21,
+            "generated_tokens": 32,
+            "total_sequence_tokens": 53,
+            "use_cache": true,
+            "runs": 3,
+            "trial_latencies_s": [
+              1.067671,
+              1.068781,
+              1.105444
+            ],
+            "mean_latency_s": 1.080632,
+            "std_latency_s": 0.021495,
+            "min_latency_s": 1.067671,
+            "max_latency_s": 1.105444,
+            "ms_per_token": 33.7697,
+            "tokens_per_sec": 29.61
+          },
+          "without_cache": {
+            "max_new_tokens": 32,
+            "prompt_tokens": 21,
+            "generated_tokens": 32,
+            "total_sequence_tokens": 53,
+            "use_cache": false,
+            "runs": 3,
+            "trial_latencies_s": [
+              1.843141,
+              1.700862,
+              1.784643
+            ],
+            "mean_latency_s": 1.776215,
+            "std_latency_s": 0.071513,
+            "min_latency_s": 1.700862,
+            "max_latency_s": 1.843141,
+            "ms_per_token": 55.5067,
+            "tokens_per_sec": 18.02
+          },
+          "speedup_factor": 1.6437,
+          "latency_saved_pct": 39.16,
+          "outputs_identical": true,
+          "kv_cache_memory_kb": 1908.0,
+          "generated_preview": "gipahibalo sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa k"
+        },
+        {
+          "max_new_tokens": 64,
+          "prompt_tokens": 21,
+          "total_sequence_tokens": 85,
+          "with_cache": {
+            "max_new_tokens": 64,
+            "prompt_tokens": 21,
+            "generated_tokens": 64,
+            "total_sequence_tokens": 85,
+            "use_cache": true,
+            "runs": 3,
+            "trial_latencies_s": [
+              2.17048,
+              2.2451,
+              2.176162
+            ],
+            "mean_latency_s": 2.197247,
+            "std_latency_s": 0.041539,
+            "min_latency_s": 2.17048,
+            "max_latency_s": 2.2451,
+            "ms_per_token": 34.332,
+            "tokens_per_sec": 29.13
+          },
+          "without_cache": {
+            "max_new_tokens": 64,
+            "prompt_tokens": 21,
+            "generated_tokens": 64,
+            "total_sequence_tokens": 85,
+            "use_cache": false,
+            "runs": 3,
+            "trial_latencies_s": [
+              3.798078,
+              3.878364,
+              3.832557
+            ],
+            "mean_latency_s": 3.836333,
+            "std_latency_s": 0.040276,
+            "min_latency_s": 3.798078,
+            "max_latency_s": 3.878364,
+            "ms_per_token": 59.9427,
+            "tokens_per_sec": 16.68
+          },
+          "speedup_factor": 1.746,
+          "latency_saved_pct": 42.73,
+          "outputs_identical": true,
+          "kv_cache_memory_kb": 3060.0,
+          "generated_preview": "gipahibalo sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kap"
+        },
+        {
+          "max_new_tokens": 128,
+          "prompt_tokens": 21,
+          "total_sequence_tokens": 149,
+          "with_cache": {
+            "max_new_tokens": 128,
+            "prompt_tokens": 21,
+            "generated_tokens": 128,
+            "total_sequence_tokens": 149,
+            "use_cache": true,
+            "runs": 3,
+            "trial_latencies_s": [
+              4.36233,
+              4.337555,
+              4.31838
+            ],
+            "mean_latency_s": 4.339422,
+            "std_latency_s": 0.022034,
+            "min_latency_s": 4.31838,
+            "max_latency_s": 4.36233,
+            "ms_per_token": 33.9017,
+            "tokens_per_sec": 29.5
+          },
+          "without_cache": {
+            "max_new_tokens": 128,
+            "prompt_tokens": 21,
+            "generated_tokens": 128,
+            "total_sequence_tokens": 149,
+            "use_cache": false,
+            "runs": 3,
+            "trial_latencies_s": [
+              8.864197,
+              9.087379,
+              9.099285
+            ],
+            "mean_latency_s": 9.016954,
+            "std_latency_s": 0.132425,
+            "min_latency_s": 8.864197,
+            "max_latency_s": 9.099285,
+            "ms_per_token": 70.445,
+            "tokens_per_sec": 14.2
+          },
+          "speedup_factor": 2.0779,
+          "latency_saved_pct": 51.87,
+          "outputs_identical": true,
+          "kv_cache_memory_kb": 5364.0,
+          "generated_preview": "gipahibalo sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kap"
+        },
+        {
+          "max_new_tokens": 256,
+          "prompt_tokens": 21,
+          "total_sequence_tokens": 277,
+          "with_cache": {
+            "max_new_tokens": 256,
+            "prompt_tokens": 21,
+            "generated_tokens": 256,
+            "total_sequence_tokens": 277,
+            "use_cache": true,
+            "runs": 3,
+            "trial_latencies_s": [
+              8.751756,
+              8.927406,
+              8.639366
+            ],
+            "mean_latency_s": 8.772843,
+            "std_latency_s": 0.145173,
+            "min_latency_s": 8.639366,
+            "max_latency_s": 8.927406,
+            "ms_per_token": 34.2689,
+            "tokens_per_sec": 29.18
+          },
+          "without_cache": {
+            "max_new_tokens": 256,
+            "prompt_tokens": 21,
+            "generated_tokens": 256,
+            "total_sequence_tokens": 277,
+            "use_cache": false,
+            "runs": 3,
+            "trial_latencies_s": [
+              24.466167,
+              24.918278,
+              25.560316
+            ],
+            "mean_latency_s": 24.981587,
+            "std_latency_s": 0.549815,
+            "min_latency_s": 24.466167,
+            "max_latency_s": 25.560316,
+            "ms_per_token": 97.5843,
+            "tokens_per_sec": 10.25
+          },
+          "speedup_factor": 2.8476,
+          "latency_saved_pct": 64.88,
+          "outputs_identical": true,
+          "kv_cache_memory_kb": 9972.0,
+          "generated_preview": "gipahibalo sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kap"
+        }
+      ]
+    },
+    "cuda": {
+      "device": "cuda",
+      "device_name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+      "dtype": "torch.float32",
+      "dtype_bytes": 4,
+      "timed_runs_per_setting": 5,
+      "results": [
+        {
+          "max_new_tokens": 32,
+          "prompt_tokens": 21,
+          "total_sequence_tokens": 53,
+          "with_cache": {
+            "max_new_tokens": 32,
+            "prompt_tokens": 21,
+            "generated_tokens": 32,
+            "total_sequence_tokens": 53,
+            "use_cache": true,
+            "runs": 5,
+            "trial_latencies_s": [
+              0.348131,
+              0.365755,
+              0.380177,
+              0.296661,
+              0.31197
+            ],
+            "mean_latency_s": 0.340539,
+            "std_latency_s": 0.035377,
+            "min_latency_s": 0.296661,
+            "max_latency_s": 0.380177,
+            "ms_per_token": 10.6418,
+            "tokens_per_sec": 93.97
+          },
+          "without_cache": {
+            "max_new_tokens": 32,
+            "prompt_tokens": 21,
+            "generated_tokens": 32,
+            "total_sequence_tokens": 53,
+            "use_cache": false,
+            "runs": 5,
+            "trial_latencies_s": [
+              0.307762,
+              0.338018,
+              0.284272,
+              0.300157,
+              0.355111
+            ],
+            "mean_latency_s": 0.317064,
+            "std_latency_s": 0.028872,
+            "min_latency_s": 0.284272,
+            "max_latency_s": 0.355111,
+            "ms_per_token": 9.9082,
+            "tokens_per_sec": 100.93
+          },
+          "speedup_factor": 0.9311,
+          "latency_saved_pct": -7.4,
+          "outputs_identical": true,
+          "kv_cache_memory_kb": 1908.0,
+          "generated_preview": "gipahibalo sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa k"
+        },
+        {
+          "max_new_tokens": 64,
+          "prompt_tokens": 21,
+          "total_sequence_tokens": 85,
+          "with_cache": {
+            "max_new_tokens": 64,
+            "prompt_tokens": 21,
+            "generated_tokens": 64,
+            "total_sequence_tokens": 85,
+            "use_cache": true,
+            "runs": 5,
+            "trial_latencies_s": [
+              0.803103,
+              0.682875,
+              0.644661,
+              0.640638,
+              0.723183
+            ],
+            "mean_latency_s": 0.698892,
+            "std_latency_s": 0.067159,
+            "min_latency_s": 0.640638,
+            "max_latency_s": 0.803103,
+            "ms_per_token": 10.9202,
+            "tokens_per_sec": 91.57
+          },
+          "without_cache": {
+            "max_new_tokens": 64,
+            "prompt_tokens": 21,
+            "generated_tokens": 64,
+            "total_sequence_tokens": 85,
+            "use_cache": false,
+            "runs": 5,
+            "trial_latencies_s": [
+              0.675332,
+              0.676848,
+              0.626722,
+              0.599378,
+              0.657834
+            ],
+            "mean_latency_s": 0.647223,
+            "std_latency_s": 0.033503,
+            "min_latency_s": 0.599378,
+            "max_latency_s": 0.676848,
+            "ms_per_token": 10.1129,
+            "tokens_per_sec": 98.88
+          },
+          "speedup_factor": 0.9261,
+          "latency_saved_pct": -7.98,
+          "outputs_identical": true,
+          "kv_cache_memory_kb": 3060.0,
+          "generated_preview": "gipahibalo sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kap"
+        },
+        {
+          "max_new_tokens": 128,
+          "prompt_tokens": 21,
+          "total_sequence_tokens": 149,
+          "with_cache": {
+            "max_new_tokens": 128,
+            "prompt_tokens": 21,
+            "generated_tokens": 128,
+            "total_sequence_tokens": 149,
+            "use_cache": true,
+            "runs": 5,
+            "trial_latencies_s": [
+              1.307837,
+              1.393471,
+              1.321817,
+              1.631457,
+              1.483597
+            ],
+            "mean_latency_s": 1.427636,
+            "std_latency_s": 0.133596,
+            "min_latency_s": 1.307837,
+            "max_latency_s": 1.631457,
+            "ms_per_token": 11.1534,
+            "tokens_per_sec": 89.66
+          },
+          "without_cache": {
+            "max_new_tokens": 128,
+            "prompt_tokens": 21,
+            "generated_tokens": 128,
+            "total_sequence_tokens": 149,
+            "use_cache": false,
+            "runs": 5,
+            "trial_latencies_s": [
+              1.352082,
+              1.717805,
+              1.398708,
+              1.607471,
+              1.624824
+            ],
+            "mean_latency_s": 1.540178,
+            "std_latency_s": 0.157034,
+            "min_latency_s": 1.352082,
+            "max_latency_s": 1.717805,
+            "ms_per_token": 12.0326,
+            "tokens_per_sec": 83.11
+          },
+          "speedup_factor": 1.0788,
+          "latency_saved_pct": 7.31,
+          "outputs_identical": true,
+          "kv_cache_memory_kb": 5364.0,
+          "generated_preview": "gipahibalo sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kap"
+        },
+        {
+          "max_new_tokens": 256,
+          "prompt_tokens": 21,
+          "total_sequence_tokens": 277,
+          "with_cache": {
+            "max_new_tokens": 256,
+            "prompt_tokens": 21,
+            "generated_tokens": 256,
+            "total_sequence_tokens": 277,
+            "use_cache": true,
+            "runs": 5,
+            "trial_latencies_s": [
+              2.809037,
+              3.007406,
+              2.546898,
+              2.603511,
+              2.526211
+            ],
+            "mean_latency_s": 2.698613,
+            "std_latency_s": 0.205749,
+            "min_latency_s": 2.526211,
+            "max_latency_s": 3.007406,
+            "ms_per_token": 10.5415,
+            "tokens_per_sec": 94.86
+          },
+          "without_cache": {
+            "max_new_tokens": 256,
+            "prompt_tokens": 21,
+            "generated_tokens": 256,
+            "total_sequence_tokens": 277,
+            "use_cache": false,
+            "runs": 5,
+            "trial_latencies_s": [
+              3.189404,
+              2.878657,
+              2.947558,
+              3.374616,
+              2.681761
+            ],
+            "mean_latency_s": 3.014399,
+            "std_latency_s": 0.271074,
+            "min_latency_s": 2.681761,
+            "max_latency_s": 3.374616,
+            "ms_per_token": 11.775,
+            "tokens_per_sec": 84.93
+          },
+          "speedup_factor": 1.117,
+          "latency_saved_pct": 10.48,
+          "outputs_identical": true,
+          "kv_cache_memory_kb": 9972.0,
+          "generated_preview": "gipahibalo sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kapulisan sa kap"
+        }
+      ]
+    }
+  }
+}

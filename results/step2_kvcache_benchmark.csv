@@ -1,0 +1,17 @@
+device,device_name,prompt_id,prompt_tokens,max_new_tokens,generated_tokens,use_cache,runs,mean_latency_s,std_latency_s,min_latency_s,max_latency_s,ms_per_token,tokens_per_sec,speedup_factor,kv_cache_memory_kb,outputs_identical
+cpu,AMD Ryzen 7 7735HS with Radeon Graphics,P2_news_gov,21,32,32,True,3,1.080632,0.021495,1.067671,1.105444,33.7697,29.61,1.6437,1908.0,True
+cpu,AMD Ryzen 7 7735HS with Radeon Graphics,P2_news_gov,21,32,32,False,3,1.776215,0.071513,1.700862,1.843141,55.5067,18.02,1.0,0.0,True
+cpu,AMD Ryzen 7 7735HS with Radeon Graphics,P2_news_gov,21,64,64,True,3,2.197247,0.041539,2.17048,2.2451,34.332,29.13,1.746,3060.0,True
+cpu,AMD Ryzen 7 7735HS with Radeon Graphics,P2_news_gov,21,64,64,False,3,3.836333,0.040276,3.798078,3.878364,59.9427,16.68,1.0,0.0,True
+cpu,AMD Ryzen 7 7735HS with Radeon Graphics,P2_news_gov,21,128,128,True,3,4.339422,0.022034,4.31838,4.36233,33.9017,29.5,2.0779,5364.0,True
+cpu,AMD Ryzen 7 7735HS with Radeon Graphics,P2_news_gov,21,128,128,False,3,9.016954,0.132425,8.864197,9.099285,70.445,14.2,1.0,0.0,True
+cpu,AMD Ryzen 7 7735HS with Radeon Graphics,P2_news_gov,21,256,256,True,3,8.772843,0.145173,8.639366,8.927406,34.2689,29.18,2.8476,9972.0,True
+cpu,AMD Ryzen 7 7735HS with Radeon Graphics,P2_news_gov,21,256,256,False,3,24.981587,0.549815,24.466167,25.560316,97.5843,10.25,1.0,0.0,True
+cuda,NVIDIA GeForce RTX 4050 Laptop GPU,P2_news_gov,21,32,32,True,5,0.340539,0.035377,0.296661,0.380177,10.6418,93.97,0.9311,1908.0,True
+cuda,NVIDIA GeForce RTX 4050 Laptop GPU,P2_news_gov,21,32,32,False,5,0.317064,0.028872,0.284272,0.355111,9.9082,100.93,1.0,0.0,True
+cuda,NVIDIA GeForce RTX 4050 Laptop GPU,P2_news_gov,21,64,64,True,5,0.698892,0.067159,0.640638,0.803103,10.9202,91.57,0.9261,3060.0,True
+cuda,NVIDIA GeForce RTX 4050 Laptop GPU,P2_news_gov,21,64,64,False,5,0.647223,0.033503,0.599378,0.676848,10.1129,98.88,1.0,0.0,True
+cuda,NVIDIA GeForce RTX 4050 Laptop GPU,P2_news_gov,21,128,128,True,5,1.427636,0.133596,1.307837,1.631457,11.1534,89.66,1.0788,5364.0,True
+cuda,NVIDIA GeForce RTX 4050 Laptop GPU,P2_news_gov,21,128,128,False,5,1.540178,0.157034,1.352082,1.717805,12.0326,83.11,1.0,0.0,True
+cuda,NVIDIA GeForce RTX 4050 Laptop GPU,P2_news_gov,21,256,256,True,5,2.698613,0.205749,2.526211,3.007406,10.5415,94.86,1.117,9972.0,True
+cuda,NVIDIA GeForce RTX 4050 Laptop GPU,P2_news_gov,21,256,256,False,5,3.014399,0.271074,2.681761,3.374616,11.775,84.93,1.0,0.0,True
