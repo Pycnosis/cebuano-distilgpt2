@@ -1,12 +1,12 @@
 # Teaching DistilGPT2 Cebuano: Fine-Tuning, Decoding & Alignment
 
-Midterm Project — Adapting pretrained `distilgpt2` (82M parameters) to Cebuano (Bisaya) using LoRA fine-tuning, decoding strategy benchmarking + KV-cache latency measurement, and lightweight DPO alignment.
+Midterm Project — Adapting pretrained `distilgpt2` (82M parameters) to Cebuano (Bisaya) using LoRA fine-tuning, decoding strategy benchmarking + KV-cache latency measurement, lightweight DPO alignment, and architectural analysis.
 
 ## Team Members
 
-- **Nico** ([@Pycnosis](https://github.com/Pycnosis)) — Modeling Pipeline & Decoding Benchmarks
-- **Lej** — ([@lejxz](https://github.com/lejxz)) — Native-Speaker Linguistic Sanity Checks & DPO Preference Alignment
-- **Joshua** ([@JoshyEyeBa11](https://github.com/JoshyEyeBa11)) — Architecture Analysis, Technical Reporting & Presentation Lead
+- **Nico** ([@Pycnosis](https://github.com/Pycnosis)) — Corpus Pipeline, Step 0 & Step 1 LoRA Fine-Tuning, Step 2B KV-Cache & MoE Analysis, Week 2 Notebook Integration, Final Report Compilation & Slides 1–2
+- **Lej** ([@lejxz](https://github.com/lejxz)) — Native-Speaker Linguistic QA, Cebuano DPO Preference Dataset (`38` pairs), Step 3 DPO Training & Evaluation Pipeline & Slide 4 (+ Cross-Slide Cebuano QA)
+- **Joshua** ([@JoshyEyeBa11](https://github.com/JoshyEyeBa11)) — Step 2A Decoding Strategies Benchmark, Step 4 Positional Embeddings & Architecture Comparison, Week 2 Notebook Verification & Slides 3 & 5
 
 ## Project Deliverables & Links
 
@@ -19,36 +19,46 @@ Midterm Project — Adapting pretrained `distilgpt2` (82M parameters) to Cebuano
 ```text
 cebuano-distilgpt2/
 ├── data/
-│   ├── cebuano_corpus.txt             # Combined CebuaNER + cebuano-readability corpus
-│   ├── cebuano_corpus_train.txt       # 90% train split
-│   ├── cebuano_corpus_val.txt         # 10% held-out validation split
-│   ├── cebuano_dpo_preferences.jsonl  # 38 original Cebuano (prompt, chosen, rejected) triplets
-│   └── corpus_stats.json              # Dataset statistics & BPE token counts
+│   ├── cebuano_corpus.txt                   # Combined CebuaNER + cebuano-readability corpus
+│   ├── cebuano_corpus_train.txt             # 90% stratified train split
+│   ├── cebuano_corpus_val.txt               # 10% held-out validation split
+│   ├── corpus_stats.json                    # Dataset statistics & BPE token counts
+│   └── cebuano_dpo_preferences.jsonl        # 38 native-speaker-QA'd Cebuano DPO triplets (32 train / 6 test)
 ├── scripts/
-│   ├── prepare_corpus.py              # Step 1A: Load HF datasets, detokenize & merge corpus
-│   ├── step0_baseline.py              # Step 0: Tokenizer fragmentation, generation & baseline PPL
-│   ├── step1_train_lora.py            # Step 1B: LoRA fine-tuning, loss curve & before/after eval
-│   ├── step3_train_dpo.py             # Step 3: DPO preference alignment training via TRL
-│   └── step3_eval_dpo.py              # Step 3: DPO evaluation, logp margins & generation benchmarks
+│   ├── prepare_corpus.py                    # Step 1A: Load HF datasets, detokenize & merge corpus
+│   ├── step0_baseline.py                    # Step 0: Tokenizer fragmentation, generation & baseline PPL
+│   ├── step1_train_lora.py                  # Step 1B: LoRA fine-tuning, loss curve & before/after eval
+│   ├── step2b_kvcache.py                    # Step 2B: KV-cache latency benchmark (CPU & CUDA)
+│   ├── step3_train_dpo.py                   # Step 3: DPO preference alignment training via TRL
+│   └── step3_eval_dpo.py                    # Step 3: DPO evaluation, logp margins & generation benchmarks
 ├── notebooks/
-│   ├── week1_step0_and_step1.ipynb    # Combined Week 1 interactive notebook
-│   └── week2_step2_step3_step4.ipynb  # Combined Week 2 interactive notebook
+│   ├── week1_step0_and_step1.ipynb          # Combined Week 1 interactive notebook
+│   └── week2_step2_step3_step4.ipynb        # Combined Week 2 interactive notebook
 ├── checkpoints/
-│   ├── distilgpt2-cebuano-lora/       # Saved PEFT LoRA adapter & tokenizer (Step 1)
-│   └── distilgpt2-cebuano-dpo/        # Saved DPO-aligned LoRA adapter & tokenizer (Step 3)
+│   ├── distilgpt2-cebuano-lora/             # Saved PEFT LoRA adapter & tokenizer (Step 1)
+│   └── distilgpt2-cebuano-dpo/              # Saved DPO-aligned LoRA adapter & tokenizer (Step 3)
 ├── results/
-│   ├── step0_tokenizer_comparison.csv # English vs. Cebuano BPE fertility table
-│   ├── step0_fragmentation_chart.png  # Tokenizer fragmentation visual comparison
-│   ├── step0_baseline_generations.md  # Untouched DistilGPT2 outputs
-│   ├── step1_loss_curve.png           # Training & validation loss curve
-│   ├── step1_before_after_eval.md     # Before vs. after LoRA comparison
-│   ├── step3_dpo_margins_chart.png    # DPO log-probability margin distribution shift
-│   ├── step3_dpo_metrics.json         # Quantitative DPO evaluation metrics
-│   └── step3_dpo_before_after.md      # Before vs. after DPO qualitative continuations
+│   ├── step0_tokenizer_comparison.csv       # English vs. Cebuano BPE fertility table
+│   ├── step0_fragmentation_chart.png        # Tokenizer fragmentation visual comparison
+│   ├── step0_baseline_generations.md        # Untouched DistilGPT2 outputs
+│   ├── step0_summary.json                   # Step 0 canonical metrics
+│   ├── step1_loss_curve.png                 # Training & validation loss curve
+│   ├── step1_training_history.json          # Step 1 trainer step logs
+│   ├── step1_before_after_eval.md           # Before vs. after LoRA comparison + native-speaker review
+│   ├── step1_summary.json                   # Step 1 canonical metrics
+│   ├── step2_kvcache_benchmark.csv          # Step 2B KV-cache latency & speedup table (CPU & GPU)
+│   ├── step2_kvcache_chart.png              # Step 2B latency curve & speedup chart
+│   ├── step2_kvcache_summary.json           # Step 2B canonical metrics & KV-cache memory stats
+│   ├── step3_dpo_train_history.json         # Step 3 DPO training logs
+│   ├── step3_dpo_margins_chart.png          # Step 3 DPO log-probability margin distribution shift
+│   ├── step3_dpo_metrics.json               # Step 3 quantitative DPO evaluation metrics
+│   └── step3_dpo_before_after.md            # Step 3 before vs. after DPO qualitative continuations
 └── report/
     ├── step1_scaling_laws_writeup.md        # Step 1 scaling-laws & LoRA writeup
+    ├── step2b_kvcache_and_moe_writeup.md    # Step 2B KV-cache O(T^2) vs O(T) & MoE trade-off writeup
     ├── step3_dpo_alignment_writeup.md       # Step 3 DPO alignment & RLHF writeup
-    ├── step4_architecture_comparison.md     # Step 4 Positional embeddings & architecture writeup
+    ├── step4_architecture_comparison.md     # Step 4 positional embeddings & architecture writeup
+    ├── canva_slides_1_and_2_copy.md         # Canva deck copy & speaker notes for Slides 1–2
     ├── canva_slides_3_to_5_copy.md          # Canva deck copy & speaker notes for Slides 3–5
     └── final_report.md                      # Master consolidated project final report
 ```
@@ -74,16 +84,20 @@ pip install -r requirements.txt
    ```
 
 ### Week 2 Pipeline
-1. **Run Step 3 DPO Alignment Training:**
+1. **Run Step 2B KV-Cache Latency Benchmark:**
+   ```bash
+   python scripts/step2b_kvcache.py
+   ```
+2. **Run Step 3 DPO Alignment Training:**
    ```bash
    python scripts/step3_train_dpo.py
    ```
-2. **Run Step 3 DPO Evaluation & Benchmark:**
+3. **Run Step 3 DPO Evaluation & Benchmark:**
    ```bash
    python scripts/step3_eval_dpo.py
    ```
 
-## Results Summary (Steps 0, 1, 3 & 4)
+## Results Summary (Steps 0, 1, 2B, 3 & 4)
 
 | Metric / Dimension | Value | Notes |
 | :--- | :--- | :--- |
@@ -94,10 +108,12 @@ pip install -r requirements.txt
 | **LoRA Trainable Budget** | `1,622,016 / 83,534,592` (`1.94%`) | `r=32`, `alpha=64`, `c_attn` + `c_proj`, 6 epochs |
 | **Step 0 Baseline Perplexity** | `211.56` (Val Loss `5.3545`) | Stock `distilgpt2` on `cebuano_corpus_val.txt` |
 | **Step 1 Post-LoRA Perplexity** | **`34.88`** (Val Loss `3.5518`) | **-176.68 PPL (-83.5%)** |
+| **Step 2B KV-Cache Speedup (CPU)** | **`1.64×` → `2.85×`** (`32` → `256` tokens; `64.9%` faster) | `AMD Ryzen 7 7735HS`; `use_cache=True` flat at `~34 ms/tok` vs. `97.58 ms/tok` uncached |
+| **Step 2B KV-Cache Speedup (GPU)** | **`1.08×` → `1.12×`** (`128` → `256` tokens; `outputs_identical=True`) | `RTX 4050`; launch-bound at `32`–`64` tok (`0.93×`), crossover at `128+` tok |
 | **Step 3 DPO Preferences** | `38` original triplets (`32` train, `6` test) | Native Cebuano QA; eliminates loops & English drift |
-| **Step 3 Test Reward Accuracy**| **`100.0%`** (`eval_loss = 0.3502`) | Implicit DPO reward margin: `+0.9105` |
+| **Step 3 Test Reward Accuracy** | **`100.0%`** (`eval_loss = 0.3502`) | Implicit DPO reward margin: `+0.9105` |
 | **Step 3 Test Margin Gain** | **`+8.3521`** (`-27.60 -> -19.25`) | 100% of held-out test pairs strictly improved |
-| **Step 3 Lexical Diversity** | `0.8897 -> 0.9568` (+0.0671) | Sampled distinct-2 diversity across 11 prompts |
+| **Step 3 Lexical Diversity** | `0.8897 -> 0.9568` (`+0.0671`) | Sampled distinct-2 diversity across 11 prompts; Val PPL stable (`35.33`) |
 | **Step 4 Context Horizon** | `1,024` tokens $\approx$ **`241` Cebuano words** | Analyzed vs. RoPE and ALiBi |
 
 ## Corpus Sources & Licenses
